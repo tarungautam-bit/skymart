@@ -58,7 +58,7 @@ const CheckoutPage = () => {
         <p className="text-white/60 mb-6">Total: ${placedOrder.total.toFixed(2)}</p>
         <button
           type="button"
-          onClick={() => navigate('/shop')}
+          onClick={() => navigate('/user/shop')}
           className="bg-lime-400 hover:bg-lime-300 text-black font-semibold px-6 py-3 rounded-full"
         >
           Continue Shopping
