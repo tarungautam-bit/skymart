@@ -1,7 +1,7 @@
 import React from 'react'
 import { createBrowserRouter,RouterProvider } from "react-router";
 import MainLayout from '../layout/MainLayout';
-import Homepage from '../Page/Homepage';
+import HomePage from '../Page/HomePage';
 import AboutPage from '../Page/AboutPage';
 import ShopPage from '../Page/ShopPage';
 import OrderPage from '../Page/OrderPage';
@@ -57,7 +57,7 @@ const router=createBrowserRouter([
                             };
                     },
                     hydrateFallbackElement:<Loading/> ,
-                    element:<Homepage/>
+                    element:<HomePage/>
                 },
                 {
                     path:"about",
