@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { createBrowserRouter,RouterProvider } from "react-router";
 import MainLayout from '../layout/MainLayout';
 import HomePage from '../Page/HomePage';
@@ -67,21 +67,21 @@ const router=createBrowserRouter([
                     path: "shop",
                     loader:getAllCategories,
                     hydrateFallbackElement:<Loading/>,
-                    element: <ShopPage />,
+                    element:<Suspense fallback={<Loading/>}> <ShopPage /></Suspense>,
                 },
                 {
                     path: "shop/:category",
                     loader:getAllCategories,
                     hydrateFallbackElement:<Loading/>,
-                    element: <ShopPage />,
+                    element: <Suspense fallback={<Loading/>}><ShopPage /></Suspense>,
                 },
                 {
                     path:"order",
-                    element:<OrderPage/>
+                    element: <Suspense fallback={<Loading/>}><OrderPage/></Suspense>
                 },
                 {
                     path:"product/:id",
-                    element:<ProductPage/>
+                    element: <Suspense fallback={<Loading/>}><ProductPage/></Suspense>
                 },
                 { path: 'checkout',
                  element: <CheckoutPage />
