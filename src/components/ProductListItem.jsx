@@ -3,10 +3,9 @@ import { NavLink } from "react-router";
 import useUserData from "../Hooks/useUserData";
 
 export const ProductListItem = ({ product }) => {
-  const finalPrice =
-    product.price * (1 - (product.discountPercentage || 0) / 100);
+  const finalPrice =product.price;
 
-  const discounted = product.discountPercentage > 0;
+  // const discounted = product.discountPercentage > 0;
 
   const { addToCart, cartItems, incrementQty, decrementQty } = useUserData();
 
@@ -42,11 +41,11 @@ export const ProductListItem = ({ product }) => {
           ${finalPrice.toFixed(2)}
         </p>
 
-        {discounted && (
+        {/* {discounted && (
           <p className="text-xs text-white/30 line-through">
             ${product.price.toFixed(2)}
           </p>
-        )}
+        )} */}
       </div>
 
       {/* Cart Controls */}

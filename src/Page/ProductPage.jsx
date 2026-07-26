@@ -43,10 +43,11 @@ const ProductPage = () => {
     );
   }
 
-  const finalPrice = (
-    product.price -
-    (product.price * product.discountPercentage) / 100
-  ).toFixed(2);
+  // const finalPrice = (
+  //   product.price -
+  //   (product.price * product.discountPercentage) / 100
+  // ).toFixed(2);
+  const finalPrice= product.price;
 
   const cartItem = cartItems.find((val) => val.id === product.id);
 
@@ -126,13 +127,13 @@ const ProductPage = () => {
               ${finalPrice}
             </span>
 
-            <span className="ml-4 text-2xl line-through text-white/40">
+            {/* <span className="ml-4 text-2xl line-through text-white/40">
               ${product.price}
-            </span>
+            </span> */}
 
-            <span className="ml-4 bg-red-500 px-3 py-1 rounded-full">
+            {/* <span className="ml-4 bg-red-500 px-3 py-1 rounded-full">
               {product.discountPercentage}% OFF
-            </span>
+            </span> */}
 
           </div>
 

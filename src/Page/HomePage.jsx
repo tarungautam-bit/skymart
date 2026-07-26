@@ -8,11 +8,11 @@ import useUserData from '../Hooks/useUserData';
 
 const Homepage = () => {
 
-  const {loggedInUser}=useAuth();
+  const {loggedInUser,cartItems}=useAuth();
 
     const { categories, topRated, newArrivals } = useLoaderData();
 
- 
+    const total = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0)
 
     // console.log( categories, topRated, newArrivals)
 
@@ -66,7 +66,7 @@ const Homepage = () => {
               </svg>
             </span>
             <div>
-              <p id="statCartItems" className="text-2xl font-bold">0</p>
+              <p id="statCartItems" className="text-2xl font-bold">{cartItems?.length||0}</p>
               <p className="text-sm text-white/50">Cart Items</p>
               <p className="text-xs text-white/30">In your bag</p>
             </div>
@@ -78,7 +78,7 @@ const Homepage = () => {
               </svg>
             </span>
             <div>
-              <p id="statCartValue" className="text-2xl font-bold">$0.00</p>
+              <p id="statCartValue" className="text-2xl font-bold">${total||0}</p>
               <p className="text-sm text-white/50">Cart Value</p>
               <p className="text-xs text-white/30">Ready to checkout</p>
             </div>
